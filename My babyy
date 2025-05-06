@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+    .letter-button {
+      background-color: white;
+      border: 2px dashed #ff4d6d;
+      padding: 30px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 24px;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    .letter-button:hover {
+      transform: scale(1.1);
+      background-color: #ffe6eb;
+    }
+    .popup {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff0f6;
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 600px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      font-size: 18px;
+      display: none;
+    }
+    .popup p {
+      margin-bottom: 20px;
+    }
+    .download-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff4d6d;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    .download-button:hover {
+      background-color: #ff3366;
+    }
+  </style>
+</head>
+<body>
+  <div class="letter-button" onclick="showLetter()">Click the Letter 💌</div>
+  <div class="popup" id="popup">
+    <p><strong>HAPPY BIRTHDAY ULIT, MY LUV!!! 🎉💖</strong></p>
+    <p>Eto, another letter for you kasi you deserve all the cheesy shizzz in the world!!! OMGGG, YOU'RE 18 NA!!! LEGAL NA, SHET!!! 🥳 Pero kahit adulting mode ka na, forever kang baby ko Hihi.</p>
+    <p>And I hope you overcome all your weaknesses. College will be hard, but I'm here for you no matter how tough it gets. Kahit sobrang hirap, I'll still be here supporting you always.</p>
+    <p>Pero seryoso, I'm so proud of you, pati na sa mga silly arguments natin na laging nauuwi sa "sorry" at "love you", I'll never stop cheering for you, hugging you tight, and laughing with you. YOU'RE MY FAVV PERSONN EVERRRR!!! 😤💘</p>
+    <p>HAPPY BIRTHDAY, MY FUTURE!!! Sana mabiyayaan ka ng more blessings, and sana... AKO PA RIN FOREVER??? 👉👈 HAHAHAHA. Joke lang (pero 'di talaga joke 😘).</p>
+    <p><em>your baby, syke</em> ❤️</p>
+    <button class="download-button" onclick="downloadLetter()">Download Letter 💾</button>
+  </div>
+
+  <script>
+    function showLetter() {
+      document.getElementById("popup").style.display = "block";
+    }
+
+    function downloadLetter() {
+      const text = `HAPPY BIRTHDAY ULIT, MY LUV!!! 🎉💖\n\nEto, another letter for you kasi you deserve all the cheesy shizzz in the world!!! OMGGG, YOU'RE 18 NA!!! LEGAL NA, SHET!!! 🥳 Pero kahit adulting mode ka na, forever kang baby ko Hihi.\n\nAnd I hope you overcome all your weaknesses. College will be hard, but I'm here for you no matter how tough it gets. Kahit sobrang hirap, I'll still be here supporting you always.\n\nPero seryoso, I'm so proud of you, pati na sa mga silly arguments natin na laging nauuwi sa \"sorry\" at \"love you\", I'll never stop cheering for you, hugging you tight, and laughing with you. YOU'RE MY FAVV PERSONN EVERRRR!!! 😤💘\n\nHAPPY BIRTHDAY, MY FUTURE!!! Sana mabiyayaan ka ng more blessings, and sana... AKO PA RIN FOREVER??? 👉👈 HAHAHAHA. Joke lang (pero 'di talaga joke 😘).\n\n- your baby, syke ❤️`;
+      const blob = new Blob([text], { type: 'text/plain' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'happy_birthday_letter.txt';
+      link.click();
+    }
+  </script>
+</body>
+</html>
